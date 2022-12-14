@@ -12,8 +12,16 @@ for f in os.scandir('../dirname'):
     if f.is_dir() and  f.path != '../dirname/.ipynb_checkpoints':
         print(f.path)
 
-        
-        
+# Solution 3
+def list_of_sub_dir(dir_name):
+    subfolder = []
+    for f in os.scandir('../'+dir_name):
+        if f.is_dir() and  f.path != '../'+ dir_name +'/.ipynb_checkpoints':
+            subfolder.append(f.path)
+            #print(subfolder)  
+    return subfolder
+
+
 '''
  comaprison of various methods for tracing the files in a system
 '''        
