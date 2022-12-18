@@ -1,0 +1,9 @@
+insert the following in the cmd line
+
+ffmpeg  -t 11 -i bb.mp4     -vf "fps=10,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"   -loop -1 output_bb.gif
+
+# the fps is frame per sec
+# scale is the quality
+# -t 11 is the 11 sec duration of the video
+# -s 22 will start the conversion from 22 nd sec
+# -loop -1 will repeat it for once and 1 will repeat it for ever 
